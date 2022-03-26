@@ -1,0 +1,712 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://blackTile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://whiteTile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://buttonHandling.gd" type="Script" id=3]
+[ext_resource path="res://mainCamera.gd" type="Script" id=4]
+[ext_resource path="res://a1.gd" type="Script" id=5]
+[ext_resource path="res://b1.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/white_knight_radial_button.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/white_pawn_radial_button.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/white_queen_radial_button.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/white_rook_radial_button.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/white_bishop_radial_button.png" type="Texture" id=11]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="mainViewportCamera" type="ViewportContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -1080.0
+margin_right = 1600.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="mainViewportCamera"]
+size = Vector2( 1600, 1080 )
+own_world = true
+
+[node name="mainCamera" type="Camera2D" parent="mainViewportCamera/Viewport"]
+position = Vector2( 800, -540 )
+current = true
+zoom = Vector2( 1.2, 1.2 )
+smoothing_speed = 1.0
+script = ExtResource( 4 )
+
+[node name="whitePawnChooser" type="Button" parent="mainViewportCamera/Viewport/mainCamera"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -750.0
+margin_top = 340.0
+margin_right = -630.0
+margin_bottom = 460.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhitePawnRadialButton" type="Sprite" parent="mainViewportCamera/Viewport/mainCamera/whitePawnChooser"]
+position = Vector2( 59.9999, 60 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 8 )
+
+[node name="whiteKnightChooser" type="Button" parent="mainViewportCamera/Viewport/mainCamera"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -750.0
+margin_top = 190.0
+margin_right = -630.0
+margin_bottom = 310.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteKnightRadialButton" type="Sprite" parent="mainViewportCamera/Viewport/mainCamera/whiteKnightChooser"]
+position = Vector2( 60, 60 )
+scale = Vector2( 3.75, 3.75 )
+texture = ExtResource( 7 )
+
+[node name="whiteBishopChooser" type="Button" parent="mainViewportCamera/Viewport/mainCamera"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -750.0
+margin_top = 40.0
+margin_right = -630.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteBishopRadialButton" type="Sprite" parent="mainViewportCamera/Viewport/mainCamera/whiteBishopChooser"]
+position = Vector2( 60, 60 )
+scale = Vector2( 3.75, 3.75 )
+texture = ExtResource( 11 )
+
+[node name="whiteRookChooser" type="Button" parent="mainViewportCamera/Viewport/mainCamera"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -750.0
+margin_top = -110.0
+margin_right = -630.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteRookRadialButton" type="Sprite" parent="mainViewportCamera/Viewport/mainCamera/whiteRookChooser"]
+position = Vector2( 60, 60 )
+scale = Vector2( 3.75, 3.75 )
+texture = ExtResource( 10 )
+
+[node name="whiteQueenChooser" type="Button" parent="mainViewportCamera/Viewport/mainCamera"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -750.0
+margin_top = -260.0
+margin_right = -630.0
+margin_bottom = -140.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteQueenRadialButton" type="Sprite" parent="mainViewportCamera/Viewport/mainCamera/whiteQueenChooser"]
+position = Vector2( 60, 60 )
+scale = Vector2( 3.75, 3.75 )
+texture = ExtResource( 9 )
+
+[node name="a1" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="a1Btn" type="Button" parent="a1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="b1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, 0 )
+script = ExtResource( 6 )
+
+[node name="b1Btn" type="Button" parent="b1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+
+[node name="c1Btn" type="Button" parent="c1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="d1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, 0 )
+
+[node name="d1Btn" type="Button" parent="d1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="e1Btn" type="Button" parent="e1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, 0 )
+
+[node name="f1Btn" type="Button" parent="f1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="g1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, 0 )
+
+[node name="g1Btn" type="Button" parent="g1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 0 )
+
+[node name="h1Btn" type="Button" parent="h1"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -150 )
+
+[node name="b2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -150 )
+
+[node name="c2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -150 )
+
+[node name="d2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -150 )
+
+[node name="e2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -150 )
+
+[node name="f2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -150 )
+
+[node name="g2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -150 )
+
+[node name="h2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -150 )
+
+[node name="a3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -300 )
+
+[node name="b3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -300 )
+
+[node name="c3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -300 )
+
+[node name="d3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -300 )
+
+[node name="e3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -300 )
+
+[node name="f3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -300 )
+
+[node name="g3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -300 )
+
+[node name="h3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -300 )
+
+[node name="a4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -450 )
+
+[node name="b4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -450 )
+
+[node name="c4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -450 )
+
+[node name="d4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -450 )
+
+[node name="e4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -450 )
+
+[node name="f4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -450 )
+
+[node name="g4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -450 )
+
+[node name="h4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -450 )
+
+[node name="a5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -600 )
+
+[node name="b5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -600 )
+
+[node name="c5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -600 )
+
+[node name="d5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -600 )
+
+[node name="e5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -600 )
+
+[node name="f5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -600 )
+
+[node name="g5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -600 )
+
+[node name="h5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -600 )
+
+[node name="a6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -750 )
+
+[node name="b6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -750 )
+
+[node name="c6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -750 )
+
+[node name="d6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -750 )
+
+[node name="e6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -750 )
+
+[node name="f6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -750 )
+
+[node name="g6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -750 )
+
+[node name="h6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -750 )
+
+[node name="a7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -900 )
+
+[node name="b7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -900 )
+
+[node name="c7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -900 )
+
+[node name="d7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -900 )
+
+[node name="e7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -900 )
+
+[node name="f7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -900 )
+
+[node name="g7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -900 )
+
+[node name="h7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -900 )
+
+[node name="a8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -1050 )
+
+[node name="b8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -1050 )
+
+[node name="c8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -1050 )
+
+[node name="d8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -1050 )
+
+[node name="e8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -1050 )
+
+[node name="f8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -1050 )
+
+[node name="g8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -1050 )
+
+[node name="h8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -1050 )
+
+[node name="a9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -1200 )
+
+[node name="b9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -1200 )
+
+[node name="c9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -1200 )
+
+[node name="d9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -1200 )
+
+[node name="e9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -1200 )
+
+[node name="f9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -1200 )
+
+[node name="g9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -1200 )
+
+[node name="h9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -1200 )
+
+[node name="a10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -1350 )
+
+[node name="b10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -1350 )
+
+[node name="c10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -1350 )
+
+[node name="d10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -1350 )
+
+[node name="e10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -1350 )
+
+[node name="f10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -1350 )
+
+[node name="g10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -1350 )
+
+[node name="h10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -1350 )
+
+[node name="a11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -1500 )
+
+[node name="b11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -1500 )
+
+[node name="c11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -1500 )
+
+[node name="d11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -1500 )
+
+[node name="e11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -1500 )
+
+[node name="f11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -1500 )
+
+[node name="g11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -1500 )
+
+[node name="h11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -1500 )
+
+[node name="a12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -1650 )
+
+[node name="b12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -1650 )
+
+[node name="c12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -1650 )
+
+[node name="d12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -1650 )
+
+[node name="e12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -1650 )
+
+[node name="f12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -1650 )
+
+[node name="g12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -1650 )
+
+[node name="h12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -1650 )
+
+[node name="a13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -1800 )
+
+[node name="b13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -1800 )
+
+[node name="c13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -1800 )
+
+[node name="d13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -1800 )
+
+[node name="e13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -1800 )
+
+[node name="f13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -1800 )
+
+[node name="g13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -1800 )
+
+[node name="h13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -1800 )
+
+[node name="a14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -1950 )
+
+[node name="b14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -1950 )
+
+[node name="c14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -1950 )
+
+[node name="d14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -1950 )
+
+[node name="e14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -1950 )
+
+[node name="f14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -1950 )
+
+[node name="g14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -1950 )
+
+[node name="h14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -1950 )
+
+[node name="a15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -2100 )
+
+[node name="b15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -2100 )
+
+[node name="c15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, -2100 )
+
+[node name="d15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 450, -2100 )
+
+[node name="e15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, -2100 )
+
+[node name="f15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 750, -2100 )
+
+[node name="g15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, -2100 )
+
+[node name="h15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, -2100 )
+
+[node name="a16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -2250 )
+
+[node name="a16Btn" type="Button" parent="a16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="b16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, -2250 )
+
+[node name="b16Btn" type="Button" parent="b16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, -2250 )
+
+[node name="c16Btn" type="Button" parent="c16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="d16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450, -2250 )
+
+[node name="d16Btn" type="Button" parent="d16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, -2250 )
+
+[node name="e16Btn" type="Button" parent="e16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 750, -2250 )
+
+[node name="f16Btn" type="Button" parent="f16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="g16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -2250 )
+
+[node name="g16Btn" type="Button" parent="g16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050, -2250 )
+
+[node name="h16Btn" type="Button" parent="h16"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="mainViewportCamera/Viewport/mainCamera/whitePawnChooser" to="." method="_on_whitePawnChooser_pressed"]
+[connection signal="pressed" from="mainViewportCamera/Viewport/mainCamera/whiteKnightChooser" to="." method="_on_whiteKnightChooser_pressed"]
+[connection signal="pressed" from="mainViewportCamera/Viewport/mainCamera/whiteBishopChooser" to="." method="_on_whiteBishopChooser_pressed"]
+[connection signal="pressed" from="mainViewportCamera/Viewport/mainCamera/whiteRookChooser" to="." method="_on_whiteRookChooser_pressed"]
+[connection signal="pressed" from="mainViewportCamera/Viewport/mainCamera/whiteQueenChooser" to="." method="_on_whiteQueenChooser_pressed"]
+[connection signal="pressed" from="a1/a1Btn" to="." method="_on_a1Btn_pressed"]
+[connection signal="pressed" from="b1/b1Btn" to="." method="_on_b1Btn_pressed"]
+[connection signal="pressed" from="c1/c1Btn" to="." method="_on_c1Btn_pressed"]
+[connection signal="pressed" from="d1/d1Btn" to="." method="_on_d1Btn_pressed"]
+[connection signal="pressed" from="e1/e1Btn" to="." method="_on_e1Btn_pressed"]
+[connection signal="pressed" from="f1/f1Btn" to="." method="_on_f1Btn_pressed"]
+[connection signal="pressed" from="g1/g1Btn" to="." method="_on_g1Btn_pressed"]
+[connection signal="pressed" from="h1/h1Btn" to="." method="_on_h1Btn_pressed"]
+[connection signal="pressed" from="a16/a16Btn" to="." method="_on_a16Btn_pressed"]
+[connection signal="pressed" from="b16/b16Btn" to="." method="_on_b16Btn_pressed"]
+[connection signal="pressed" from="c16/c16Btn" to="." method="_on_c16Btn_pressed"]
+[connection signal="pressed" from="d16/d16Btn" to="." method="_on_d16Btn_pressed"]
+[connection signal="pressed" from="e16/e16Btn" to="." method="_on_e16Btn_pressed"]
+[connection signal="pressed" from="f16/f16Btn" to="." method="_on_f16Btn_pressed"]
+[connection signal="pressed" from="g16/g16Btn" to="." method="_on_g16Btn_pressed"]
+[connection signal="pressed" from="h16/h16Btn" to="." method="_on_h16Btn_pressed"]

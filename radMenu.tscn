@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://radMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/white_knight_radial_button.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/white_pawn_radial_button.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/white_queen_radial_button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/white_rook_radial_button.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/white_bishop_radial_button.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 202.5, 172.5 )
+
+[node name="radMenu" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 16
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -7.5, 7.5 )
+shape = SubResource( 1 )
+
+[node name="whiteQueenRadialButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -105.0
+margin_top = 30.0
+margin_right = -15.0
+margin_bottom = 120.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteQueenRadialButton" type="Sprite" parent="whiteQueenRadialButton"]
+position = Vector2( 42.5, 42.5 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 4 )
+
+[node name="whiteRookRadialButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 15.0
+margin_top = 30.0
+margin_right = 105.0
+margin_bottom = 120.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteRookRadialButton" type="Sprite" parent="whiteRookRadialButton"]
+position = Vector2( 42.5, 42.5 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 5 )
+
+[node name="whitePawnButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -135.0
+margin_top = -69.0
+margin_right = -45.0
+margin_bottom = 21.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhitePawnRadialButton" type="Sprite" parent="whitePawnButton"]
+position = Vector2( 42.5, 42.5 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 3 )
+
+[node name="whiteBishopButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 45.0
+margin_top = -69.0
+margin_right = 135.0
+margin_bottom = 21.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteBishopRadialButton" type="Sprite" parent="whiteBishopButton"]
+position = Vector2( 42.5, 42.5 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 6 )
+
+[node name="whiteKnightButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -49.0
+margin_top = -120.0
+margin_right = 41.0
+margin_bottom = -30.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteKnightRadialButton" type="Sprite" parent="whiteKnightButton"]
+position = Vector2( 45, 45 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 2 )
+
+[connection signal="mouse_exited" from="." to="." method="_on_radMenu_mouse_exited"]
